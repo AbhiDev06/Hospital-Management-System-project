@@ -16,4 +16,4 @@ following functionalities:
 
 6.Sort by Rating and Reviews
 
-7.Print the Hospital’s Name in a Specific City
+7.Print the Hospital’s Name in a Specific City.
