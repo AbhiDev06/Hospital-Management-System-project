@@ -12,7 +12,7 @@ struct Hospital {
 struct Patient { 
 	char name[50]; 
 	int age; 
-};
+}:
 // Function to print hospital data 
 void printHospital(struct Hospital hosp) { 
 	printf("Hospital Name: %s\n", hosp.name); 
