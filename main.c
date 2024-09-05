@@ -23,3 +23,11 @@ void printHospital(struct Hospital hosp) {
 	printf("Reviews: %d\n", hosp.reviews); 
 	printf("\n"); 
 }
+
+// Function to print patient data 
+void printPatient(struct Patient patient) { 
+	printf("Patient Name: %s\n", patient.name); 
+	printf("Age: %d\n", patient.age); 
+	printf("\n"); 
+}
+
