@@ -4,16 +4,12 @@ A Hospital Management System is software that facilitates its users some basic o
 
 following functionalities:
 
-1.Printing Hospital Data
+1.Displaying detailed hospital data.
 
-2.Print Patients Data
+2.Showing patient records.
 
-3.Sort by Bed Price
+3.Sorting hospitals based on bed price.
 
-4.Sort by Available Beds
+4.available beds, name, or rating.
 
-5.Sort by Name
-
-6.Sort by Rating and Reviews
-
-7.Print the Hospital’s Name in a Specific City.
+5.Filtering and displaying hospitals located in a specific city.
