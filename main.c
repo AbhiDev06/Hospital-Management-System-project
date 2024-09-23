@@ -26,9 +26,11 @@ Patient patients[MAX_PATIENTS];
 int numHospitals = 0;
 int numPatients = 0;
 
-void printHospitalData() {
+void printHospitalData() 
+{
     printf("\nHospital Data:\n");
-    for (int i = 0; i < numHospitals; i++) {
+    for (int i = 0; i < numHospitals; i++) 
+    {
         printf("Name: %s\n", hospitals[i].name);
         printf("City: %s\n", hospitals[i].city);
         printf("Available Beds: %d\n", hospitals[i].availableBeds);
@@ -38,7 +40,8 @@ void printHospitalData() {
     }
 }
 
-void printPatientData() {
+void printPatientData() 
+{
     printf("\nPatient Data:\n");
     for (int i = 0; i < numPatients; i++) {
         printf("Name: %s\n", patients[i].name);
@@ -48,23 +51,28 @@ void printPatientData() {
     }
 }
 
-int compareByPrice(const void *a, const void *b) {
+int compareByPrice(const void *a, const void *b) 
+{
     return ((Hospital*)a)->pricePerBed - ((Hospital*)b)->pricePerBed;
 }
 
-int compareByAvailableBeds(const void *a, const void *b) {
+int compareByAvailableBeds(const void *a, const void *b)
+{
     return ((Hospital*)b)->availableBeds - ((Hospital*)a)->availableBeds;
 }
 
-int compareByName(const void *a, const void *b) {
+int compareByName(const void *a, const void *b)
+{
     return strcmp(((Hospital*)a)->name, ((Hospital*)b)->name);
 }
 
-int compareByRating(const void *a, const void *b) {
+int compareByRating(const void *a, const void *b)
+{
     return ((Hospital*)b)->rating - ((Hospital*)a)->rating;
 }
 
-void sortHospitals(int choice) {
+void sortHospitals(int choice)
+{
     switch(choice) {
         case 1: qsort(hospitals, numHospitals, sizeof(Hospital), compareByPrice); break;
         case 2: qsort(hospitals, numHospitals, sizeof(Hospital), compareByAvailableBeds); break;
@@ -74,10 +82,13 @@ void sortHospitals(int choice) {
     }
 }
 
-void printHospitalsInCity(const char *city) {
+void printHospitalsInCity(const char *city) 
+{
     printf("\nHospitals in %s:\n", city);
-    for (int i = 0; i < numHospitals; i++) {
-        if (strcasecmp(hospitals[i].city, city) == 0) {
+    for (int i = 0; i < numHospitals; i++)
+        {
+        if (strcasecmp(hospitals[i].city, city) == 0)
+        {
             printf("Name: %s\n", hospitals[i].name);
             printf("City: %s\n", hospitals[i].city);
             printf("Available Beds: %d\n", hospitals[i].availableBeds);
@@ -89,7 +100,7 @@ void printHospitalsInCity(const char *city) {
 }
 
 int main() {
-    // Example data
+   
     strcpy(hospitals[0].name, "Narayana Hrudayalaya");
     strcpy(hospitals[0].city, "Bengaluru");
     hospitals[0].availableBeds = 50;
@@ -125,80 +136,5 @@ int main() {
     hospitals[4].rating = 4.0;
     strcpy(hospitals[4].reviews, "Good care but limited facilities.");
 
-    numHospitals = 5;
-
-    // Example patient data
-    strcpy(patients[0].name, "Raju");
-    patients[0].age = 30;
-    strcpy(patients[0].disease, "Heart Disease");
-    strcpy(patients[0].hospital, "Narayana Hrudayalaya");
-
-    strcpy(patients[1].name, "Abhi");
-    patients[1].age = 45;
-    strcpy(patients[1].disease, "Asthma");
-    strcpy(patients[1].hospital, "Manipal Hospital");
-
-    strcpy(patients[2].name, "Arun");
-    patients[2].age = 60;
-    strcpy(patients[2].disease, "Diabetes");
-    strcpy(patients[2].hospital, "Victoria Hospital");
-
-    strcpy(patients[3].name, "Swathi");
-    patients[3].age = 25;
-    strcpy(patients[3].disease, "Flu");
-    strcpy(patients[3].hospital, "Mysuru Medical Center");
-
-    strcpy(patients[4].name, "Surabhi");
-    patients[4].age = 35;
-    strcpy(patients[4].disease, "Injury");
-    strcpy(patients[4].hospital, "Mandya Institute Of Medical Sciences");
-
-    numPatients = 5;
-
-    int choice;
-    while (1) {
-        printf("\nHospital Management System Menu:\n");
-        printf("1. Print Hospital Data\n");
-        printf("2. Print Patient Data\n");
-        printf("3. Sort Hospitals\n");
-        printf("4. Print Hospitals in City\n");
-        printf("5. Exit\n");
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
-
-        switch(choice) {
-            case 1: 
-                printHospitalData(); 
-                break;
-            case 2: 
-                printPatientData(); 
-                break;
-            case 3:
-                printf("\nSort Hospitals By:\n");
-                printf("1. Bed Price\n");
-                printf("2. Available Beds\n");
-                printf("3. Name\n");
-                printf("4. Rating\n");
-                printf("Enter your choice: ");
-                scanf("%d", &choice);
-                sortHospitals(choice);
-                printHospitalData();
-                break;
-            case 4:
-                {
-                    char city[100];
-                    printf("Enter city: ");
-                    scanf("%s", city);
-                    printHospitalsInCity(city);
-                }
-                break;
-            case 5:
-                printf("Exiting...\n");
-                exit(0);
-            default: 
-                printf("Invalid choice.\n");
-        }
-    }
-
-    return 0;
+  
 }
